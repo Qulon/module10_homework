@@ -12,7 +12,7 @@ function evenAndOdd(arr) {
     let zero = 0
 
     for (let i = 0; i < arr.length; i++) {
-      if (typeof arr[i] === 'number') {
+      if (typeof arr[i] === 'number' && !isNaN(arr[i])) {
         if (arr[i] === 0) {
           zero += 1
         } else if(arr[i] % 2 == 0) {
@@ -29,3 +29,5 @@ function evenAndOdd(arr) {
 }
 
 evenAndOdd(arr)
+
+// Не хватает проверки на NaN. Значение NaN имеет особенность: при проверке на typeof его тип равен number, хотя NaN не является числом. Поэтому при проверке на числовые значения это всегда нужно учитывать во избежание ошибок. Сейчас, если в массив добавить NaN, он прибавляется к нечетным числам, что не соответствует действительности. Выше добавила проверку на NaN.
