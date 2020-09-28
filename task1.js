@@ -10,7 +10,7 @@
 function questOne(arg){
     try{
         arg = +arg
-        if(typeof arg === 'number' && Number.isNaN(arg) === false) {
+        if(typeof arg === 'number' && !isNaN(arg)) {
           if (arg % 2 === 0) {
             console.log(`Число ${arg} четное!`)
           } else{
